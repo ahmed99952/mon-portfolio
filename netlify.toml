@@ -1,0 +1,10 @@
+# Old links to the removed main.html page go to the home page
+[[redirects]]
+  from = "/main.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/main"
+  to = "/"
+  status = 301
