@@ -41,3 +41,13 @@ document.getElementById("infoForm").addEventListener("submit", async function (e
     button.disabled = false;
   }
 });
+
+// Message affiché après un envoi sans JavaScript (redirection depuis /api/contact)
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  if (params.has("envoye")) alert("Succès ! Votre message a bien été envoyé.");
+  if (params.has("erreur")) alert("Erreur lors de l'enregistrement : " + params.get("erreur"));
+  if (params.has("envoye") || params.has("erreur")) {
+    history.replaceState(null, "", window.location.pathname + "#contact");
+  }
+})();
